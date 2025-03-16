@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ETicaretWeb.Models.FactSatislar>
+
+@{
+    ViewData["Title"] = "Satışlar";
+}
+
+<h1>Satışlar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Satış Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Müşteri</th>
+            <th>Ürün</th>
+            <th>Miktar</th>
+            <th>Birim Fiyat</th>
+            <th>İndirim</th>
+            <th>Toplam Tutar</th>
+            <th>Net Tutar</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MusteriKeyNavigation.Ad)
+                    @Html.DisplayFor(modelItem => item.MusteriKeyNavigation.Soyad)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.UrunKeyNavigation.UrunAdi)</td>
+                <td>@Html.DisplayFor(modelItem => item.SatisMiktari)</td>
+                <td>@Html.DisplayFor(modelItem => item.BirimFiyat)</td>
+                <td>@Html.DisplayFor(modelItem => item.IndirimTutari)</td>
+                <td>@Html.DisplayFor(modelItem => item.ToplamTutar)</td>
+                <td>@Html.DisplayFor(modelItem => item.NetTutar)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SatisKey" class="btn btn-warning btn-sm">Düzenle</a>
+                    <a asp-action="Details" asp-route-id="@item.SatisKey" class="btn btn-info btn-sm">Detaylar</a>
+                    <a asp-action="Delete" asp-route-id="@item.SatisKey" class="btn btn-danger btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@model ETicaretWeb.Models.SiparisDetaylari
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SiparisDetaylari</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirimFiyat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirimFiyat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Miktar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Miktar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Indirim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Indirim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Siparis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Siparis.SiparisId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Urun)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Urun.UrunId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SiparisDetayId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

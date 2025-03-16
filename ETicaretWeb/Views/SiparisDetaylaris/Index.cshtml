@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ETicaretWeb.Models.SiparisDetaylari>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BirimFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miktar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Indirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Siparis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Urun)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirimFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miktar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Indirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Siparis.SiparisId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Urun.UrunId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SiparisDetayId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SiparisDetayId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SiparisDetayId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

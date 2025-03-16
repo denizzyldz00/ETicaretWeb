@@ -1,0 +1,52 @@
+﻿@model ETicaretWeb.Models.Siparisler
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Siparisler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MusteriId" class="control-label"></label>
+                <select asp-for="MusteriId" class ="form-control" asp-items="ViewBag.MusteriId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeslimTarihi" class="control-label"></label>
+                <input asp-for="TeslimTarihi" class="form-control" />
+                <span asp-validation-for="TeslimTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiparisDurumu" class="control-label"></label>
+                <input asp-for="SiparisDurumu" class="form-control" />
+                <span asp-validation-for="SiparisDurumu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToplamTutar" class="control-label"></label>
+                <input asp-for="ToplamTutar" class="form-control" />
+                <span asp-validation-for="ToplamTutar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeslimatAdresi" class="control-label"></label>
+                <input asp-for="TeslimatAdresi" class="form-control" />
+                <span asp-validation-for="TeslimatAdresi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

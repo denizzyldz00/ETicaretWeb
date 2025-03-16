@@ -1,0 +1,72 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f8f9fa;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+/* Tablo stilleri */
+.table {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+    .table thead {
+        background-color: #0d6efd;
+        color: white;
+    }
+
+/* Form stilleri */
+.form-control:focus {
+    border-color: #0d6efd;
+}
+
+/* Buton stilleri */
+.btn-sm {
+    margin: 2px;
+}
+
+/* Kart stilleri */
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Navbar stilleri */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Container padding */
+.container {
+    padding-top: 20px;
+}

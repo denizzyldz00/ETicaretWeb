@@ -1,0 +1,31 @@
+﻿@model ETicaretWeb.Models.DimKategoriler
+
+@{
+    ViewData["Title"] = "Kategori Sil";
+}
+
+<h1>Kategori Sil</h1>
+
+<h3>Bu kategoriyi silmek istediğinizden emin misiniz?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Kategori Adı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+        <dt class="col-sm-2">
+            Açıklama
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KategoriKey" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>
